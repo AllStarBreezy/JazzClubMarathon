@@ -1,0 +1,48 @@
+{
+	"storyName": "IT's showtime!",
+	"hideFreeplay": false,
+	"weekBackground": "show",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"weekCharacters": [
+		"showcaster",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Lights Camera Action",
+			"showcaster",
+			[
+				246,
+				53,
+				113
+			]
+		],
+		[
+			"Spotlight",
+			"showcaster",
+			[
+				246,
+				53,
+				113
+			]
+		],
+		[
+			"Broadway",
+			"denicaster",
+			[
+				135,
+				0,
+				195
+			]
+		]
+	],
+	"weekName": "week s"
+}
