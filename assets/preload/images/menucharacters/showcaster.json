@@ -1,0 +1,11 @@
+{
+	
+	"image": "Menu_Showcaster",
+	"position": [
+		400,
+		450
+	],
+	"scale": 0.3,
+	"idle_anim": "ShowYellowIdle",
+	"confirm_anim": "ShowYellowIdle"
+}
