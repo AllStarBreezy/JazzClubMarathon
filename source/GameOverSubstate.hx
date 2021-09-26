@@ -100,6 +100,19 @@ class GameOverSubstate extends MusicBeatSubstate
 				updateCamera = true;
 			}
 
+			if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
+				{
+					if (PlayState.SONG.song != 'broadway')
+						{
+							FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+							FlxG.sound.play(Paths.soundRandom('deathquotesshowcaster/death', 4, 11), FlxG.random.float(1, 1));
+						}
+						else
+							{
+								FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+								FlxG.sound.play(Paths.soundRandom('deathquotesdeni/death', 4, 11), FlxG.random.float(1, 1));
+							}
+
 			if (bf.animation.curAnim.finished)
 			{
 				coolStartDeath();
@@ -113,7 +126,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		}
 		lePlayState.callOnLuas('onUpdatePost', [elapsed]);
 	}
-
+}
 	override function beatHit()
 	{
 		super.beatHit();

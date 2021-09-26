@@ -47,9 +47,6 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
-		#if MODS_ALLOWED
-		Paths.destroyLoadedImages(true);
-		#end
 		WeekData.reloadWeekFiles(false);
 		#if desktop
 		// Updating Discord Rich Presence
@@ -57,7 +54,7 @@ class FreeplayState extends MusicBeatState
 		#end
 
 		for (i in 0...WeekData.weeksList.length) {
-			var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
+			var leWeek:WeekFile = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
 			var leSongs:Array<String> = [];
 			var leChars:Array<String> = [];
 			for (j in 0...leWeek.songs.length) {
@@ -65,7 +62,6 @@ class FreeplayState extends MusicBeatState
 				leChars.push(leWeek.songs[j][1]);
 			}
 
-			WeekData.setDirectoryFromWeek(leWeek);
 			for (song in leWeek.songs) {
 				var colors:Array<Int> = song[2];
 				if(colors == null || colors.length < 3) {
@@ -74,7 +70,6 @@ class FreeplayState extends MusicBeatState
 				addSong(song[0], i, song[1], FlxColor.fromRGB(colors[0], colors[1], colors[2]));
 			}
 		}
-		WeekData.setDirectoryFromWeek();
 
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
 		for (i in 0...initSonglist.length)
@@ -103,7 +98,6 @@ class FreeplayState extends MusicBeatState
 			songText.targetY = i;
 			grpSongs.add(songText);
 
-			Paths.currentModDirectory = songs[i].folder;
 			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
 			icon.sprTracker = songText;
 
@@ -115,7 +109,6 @@ class FreeplayState extends MusicBeatState
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 			// songText.screenCenter(X);
 		}
-		WeekData.setDirectoryFromWeek();
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
@@ -251,7 +244,6 @@ class FreeplayState extends MusicBeatState
 		if(space && instPlaying != curSelected)
 		{
 			destroyFreeplayVocals();
-			Paths.currentModDirectory = songs[curSelected].folder;
 			var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
 			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
 			if (PlayState.SONG.needsVoices)
@@ -387,7 +379,6 @@ class FreeplayState extends MusicBeatState
 			}
 		}
 		changeDiff();
-		Paths.currentModDirectory = songs[curSelected].folder;
 	}
 
 	private function positionHighscore() {
@@ -406,7 +397,6 @@ class SongMetadata
 	public var week:Int = 0;
 	public var songCharacter:String = "";
 	public var color:Int = -7179779;
-	public var folder:String = "";
 
 	public function new(song:String, week:Int, songCharacter:String, color:Int)
 	{
@@ -414,7 +404,5 @@ class SongMetadata
 		this.week = week;
 		this.songCharacter = songCharacter;
 		this.color = color;
-		this.folder = Paths.currentModDirectory;
-		if(this.folder == null) this.folder = '';
 	}
 }

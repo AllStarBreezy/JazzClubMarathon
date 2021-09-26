@@ -26,10 +26,6 @@ class StrumNote extends FlxSprite
 				resetAnim = 0;
 			}
 		}
-		
-		/*if(animation.curAnim.name == 'confirm' && !PlayState.isPixelStage) {
-			updateConfirmOffset();
-		}*/
 
 		super.update(elapsed);
 	}
@@ -46,15 +42,10 @@ class StrumNote extends FlxSprite
 			colorSwap.saturation = ClientPrefs.arrowHSV[noteData % 4][1] / 100;
 			colorSwap.brightness = ClientPrefs.arrowHSV[noteData % 4][2] / 100;
 
-			if(animation.curAnim.name == 'confirm' && !PlayState.isPixelStage) {
-				updateConfirmOffset();
+			if(animation.curAnim.name == 'confirm' && !PlayState.curStage.startsWith('school')) {
+				offset.x -= 13;
+				offset.y -= 13;
 			}
 		}
-	}
-
-	function updateConfirmOffset() { //TO DO: Find a calc to make the offset work fine on other angles
-		centerOffsets();
-		offset.x -= 13;
-		offset.y -= 13;
 	}
 }

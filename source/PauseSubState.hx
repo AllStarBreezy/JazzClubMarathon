@@ -12,7 +12,6 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import flixel.FlxCamera;
 
 class PauseSubState extends MusicBeatSubstate
 {
@@ -26,8 +25,7 @@ class PauseSubState extends MusicBeatSubstate
 	var pauseMusic:FlxSound;
 	var practiceText:FlxText;
 	var botplayText:FlxText;
-
-	public static var transCamera:FlxCamera;
+	var bubble:FlxSprite;
 
 	public function new(x:Float, y:Float)
 	{
@@ -64,6 +62,15 @@ class PauseSubState extends MusicBeatSubstate
 		levelDifficulty.setFormat(Paths.font('vcr.ttf'), 32);
 		levelDifficulty.updateHitbox();
 		add(levelDifficulty);
+
+		bubble = new FlxSprite(20).loadGraphic(Paths.image('dancerspeech'));
+		bubble.scrollFactor.set(0, 0);
+		bubble.setGraphicSize(Std.int(bubble.width * 1.175));
+		bubble.updateHitbox();
+		bubble.screenCenter();
+		bubble.visible = false;
+		bubble.antialiasing = ClientPrefs.globalAntialiasing;
+		add(bubble);
 
 		var blueballedTxt:FlxText = new FlxText(20, 15 + 64, 0, "", 32);
 		blueballedTxt.text = "Blueballed: " + PlayState.deathCounter;
@@ -146,7 +153,6 @@ class PauseSubState extends MusicBeatSubstate
 					var poop = Highscore.formatSong(name, curSelected);
 					PlayState.SONG = Song.loadFromJson(poop, name);
 					PlayState.storyDifficulty = curSelected;
-					CustomFadeTransition.nextCamera = transCamera;
 					MusicBeatState.resetState();
 					FlxG.sound.music.volume = 0;
 					PlayState.changedDifficulty = true;
@@ -167,7 +173,6 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.usedPractice = true;
 					practiceText.visible = PlayState.practiceMode;
 				case "Restart Song":
-					CustomFadeTransition.nextCamera = transCamera;
 					MusicBeatState.resetState();
 					FlxG.sound.music.volume = 0;
 				case 'Botplay':
@@ -177,7 +182,6 @@ class PauseSubState extends MusicBeatSubstate
 				case "Exit to menu":
 					PlayState.deathCounter = 0;
 					PlayState.seenCutscene = false;
-					CustomFadeTransition.nextCamera = transCamera;
 					if(PlayState.isStoryMode) {
 						MusicBeatState.switchState(new StoryMenuState());
 					} else {

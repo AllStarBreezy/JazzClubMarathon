@@ -12,12 +12,10 @@ import flixel.util.FlxColor;
 import flixel.util.FlxGradient;
 import flixel.FlxSubState;
 import flixel.FlxSprite;
-import flixel.FlxCamera;
 
 class CustomFadeTransition extends MusicBeatSubstate {
 	public static var finishCallback:Void->Void;
 	private var leTween:FlxTween = null;
-	public static var nextCamera:FlxCamera;
 	var isTransIn:Bool = false;
 	var transBlack:FlxSprite;
 	var transGradient:FlxSprite;
@@ -56,12 +54,6 @@ class CustomFadeTransition extends MusicBeatSubstate {
 				},
 			ease: FlxEase.linear});
 		}
-
-		if(nextCamera != null) {
-			transBlack.cameras = [nextCamera];
-			transGradient.cameras = [nextCamera];
-		}
-		nextCamera = null;
 	}
 
 	override function update(elapsed:Float) {
