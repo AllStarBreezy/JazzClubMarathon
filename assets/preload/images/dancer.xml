@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dancer.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="d0000" x="0" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0001" x="0" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0002" x="0" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0003" x="0" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0004" x="0" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0005" x="0" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0006" x="1601" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0007" x="1601" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0008" x="1601" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0009" x="1601" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0010" x="1601" y="0" width="1601" height="2000"/>
+	<SubTexture name="d0011" x="1601" y="0" width="1601" height="2000"/>
+</TextureAtlas>
