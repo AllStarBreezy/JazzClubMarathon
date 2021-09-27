@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ShowCaster.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="show down0000" x="0" y="0" width="937" height="1250"/>
+	<SubTexture name="show down0001" x="0" y="0" width="937" height="1250"/>
+	<SubTexture name="show down0002" x="0" y="0" width="937" height="1250"/>
+	<SubTexture name="show down0003" x="937" y="0" width="937" height="1250"/>
+	<SubTexture name="show down0004" x="937" y="0" width="937" height="1250"/>
+	<SubTexture name="show down0005" x="1874" y="0" width="937" height="1250"/>
+	<SubTexture name="show idle0000" x="2811" y="0" width="937" height="1250"/>
+	<SubTexture name="show idle0001" x="3748" y="0" width="937" height="1250"/>
+	<SubTexture name="show idle00002" x="4685" y="0" width="937" height="1250"/>
+	<SubTexture name="show idle0003" x="5622" y="0" width="937" height="1250"/>
+	<SubTexture name="show idle0004" x="6559" y="0" width="937" height="1250"/>
+	<SubTexture name="show left0000" x="0" y="1250" width="937" height="1250"/>
+	<SubTexture name="show left0001" x="0" y="1250" width="937" height="1250"/>
+	<SubTexture name="show left00002" x="0" y="1250" width="937" height="1250"/>
+	<SubTexture name="show left0003" x="937" y="1250" width="937" height="1250"/>
+	<SubTexture name="show left0004" x="937" y="1250" width="937" height="1250"/>
+	<SubTexture name="show left0005" x="1874" y="1250" width="937" height="1250"/>
+	<SubTexture name="show right0000" x="2811" y="1250" width="937" height="1250"/>
+	<SubTexture name="show right0001" x="2811" y="1250" width="937" height="1250"/>
+	<SubTexture name="show right0002" x="2811" y="1250" width="937" height="1250"/>
+	<SubTexture name="show right0003" x="3748" y="1250" width="937" height="1250"/>
+	<SubTexture name="show right0004" x="3748" y="1250" width="937" height="1250"/>
+	<SubTexture name="show right0005" x="4685" y="1250" width="937" height="1250"/>
+	<SubTexture name="show up0000" x="5622" y="1250" width="937" height="1250"/>
+	<SubTexture name="show up0001" x="5622" y="1250" width="937" height="1250"/>
+	<SubTexture name="show up0002" x="5622" y="1250" width="937" height="1250"/>
+	<SubTexture name="show up0003" x="6559" y="1250" width="937" height="1250"/>
+	<SubTexture name="show up0004" x="6559" y="1250" width="937" height="1250"/>
+	<SubTexture name="show up0005" x="0" y="2500" width="937" height="1250"/>
+</TextureAtlas>
